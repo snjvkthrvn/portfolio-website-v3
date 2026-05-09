@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sanjeev Kathiravan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      scroll-behavior: smooth;
+      cursor: none;
+    }
+    body {
+      background: #09090f;
+      color: #e6e6f0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: 'Source Serif 4', Georgia, serif;
+    }
+
+    /* ── Blob background animations ── */
+    @keyframes blob-a {
+      0%,100% { transform: translate(-50%,-50%) translate(0px,0px) scale(1); }
+      33%      { transform: translate(-50%,-50%) translate(-55px,40px) scale(1.15); }
+      66%      { transform: translate(-50%,-50%) translate(45px,-30px) scale(0.88); }
+    }
+    @keyframes blob-b {
+      0%,100% { transform: translate(-50%,-50%) translate(0px,0px) scale(1); }
+      33%      { transform: translate(-50%,-50%) translate(60px,-45px) scale(1.1); }
+      66%      { transform: translate(-50%,-50%) translate(-35px,55px) scale(0.92); }
+    }
+    @keyframes blob-c {
+      0%,100% { transform: translate(-50%,-50%) translate(0px,0px) scale(1); }
+      50%      { transform: translate(-50%,-50%) translate(-50px,-40px) scale(1.18); }
+    }
+
+    /* ── Particle float ── */
+    @keyframes ptcl {
+      0%   { transform: translateY(0px) scale(1); opacity: 0.1; }
+      50%  { opacity: 0.55; }
+      100% { transform: translateY(-70px) scale(0.5); opacity: 0; }
+    }
+
+    /* ── Scanline sweep ── */
+    @keyframes scanline {
+      0%   { top: -5%; }
+      100% { top: 105%; }
+    }
+
+    /* ── Timeline draw ── */
+    @keyframes draw-line {
+      from { transform: scaleY(0); }
+      to   { transform: scaleY(1); }
+    }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 2px; }
+
+    /* ── Section anchors need scroll offset for sticky nav ── */
+    section[id] { scroll-margin-top: 68px; }
+
+    @media (hover: none) { html { cursor: auto; } }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { cursor: auto; }
+    }
+  </style>
+
+  <script type="text/babel" src="pv2-shared.jsx"></script>
+  <script type="text/babel" src="pv2-sections.jsx"></script>
+  <script type="text/babel" src="pv2-app.jsx"></script>
+</head>
+<body>
+  <div id="root"></div>
+</body>
+</html>
